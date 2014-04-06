@@ -19,8 +19,8 @@ namespace Luhn_Calculator
 
         private void aboutButton_Click(object sender, EventArgs e)
         {
-            AboutBox about = new AboutBox();
-            about.Show();
+            AboutBox About = new AboutBox();
+            About.ShowDialog(); // or use about.Show() to make it modeless
 
         }
 
@@ -32,14 +32,13 @@ namespace Luhn_Calculator
 
         private void checkButton_Click(object sender, EventArgs e)
         {
-            outputLabel.Text = inputTextbox.Text;
-
-            
-
             try
             {
-                Luhn x = new Luhn(-1) ;
-                
+                int x = Convert.ToInt32(inputTextbox.Text) ;
+                Luhn luhn = new Luhn(x);
+
+                testLabel.Text = luhn.DigitSum(x).ToString();
+            
             }
             catch (LuhnException ex)
             {

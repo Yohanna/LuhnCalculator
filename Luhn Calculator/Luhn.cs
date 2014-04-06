@@ -8,17 +8,9 @@ namespace Luhn_Calculator
 {
     class Luhn
     {
-        public int checkDigit
-        { 
-            get { return this.checkDigit; }
-            set { this.checkDigit = checkDigit; }
-        }
-
-        public int Number
-        {
-            get { return Number; }
-            set { this.Number = Number; }
-        }
+        public int checkDigit;
+        public int Number;
+       
 
         public Luhn()
         {
@@ -69,12 +61,15 @@ namespace Luhn_Calculator
         }
 
 
-        private int SumOfDigits(int Number)
+        public int DigitSum(int Number)
         {
             int sum = 0;
-            int length = Number.ToString().Length;
             
-            // TODO calculate sum of digits in Number
+            while(Number > 0)
+            {
+                sum += Number % 10;
+                Number /= 10;
+            }
 
             return sum;
         }

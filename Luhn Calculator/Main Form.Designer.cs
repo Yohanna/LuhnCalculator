@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.checkButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.inputTextbox = new System.Windows.Forms.TextBox();
@@ -60,19 +59,9 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Enter number to be checked";
-            // 
             // aboutButton
             // 
-            this.aboutButton.Location = new System.Drawing.Point(368, 152);
+            this.aboutButton.Location = new System.Drawing.Point(200, 160);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(75, 23);
             this.aboutButton.TabIndex = 3;
@@ -97,7 +86,7 @@
             // inputTextbox
             // 
             this.inputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTextbox.Location = new System.Drawing.Point(256, 24);
+            this.inputTextbox.Location = new System.Drawing.Point(160, 24);
             this.inputTextbox.Name = "inputTextbox";
             this.inputTextbox.Size = new System.Drawing.Size(152, 29);
             this.inputTextbox.TabIndex = 6;
@@ -122,12 +111,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(629, 189);
+            this.ClientSize = new System.Drawing.Size(542, 195);
             this.Controls.Add(this.inputTextbox);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.aboutButton);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.checkButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -143,7 +131,6 @@
 
         private System.Windows.Forms.Button checkButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.TextBox inputTextbox;
