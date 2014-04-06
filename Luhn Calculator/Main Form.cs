@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Luhn_Calculator
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -27,12 +27,17 @@ namespace Luhn_Calculator
         private void resetButton_Click(object sender, EventArgs e)
         {
             outputLabel.Text = "";
-            inputMaskedTextBox.Clear();
+            inputTextbox.Clear();
         }
 
         private void checkButton_Click(object sender, EventArgs e)
         {
-            outputLabel.Text = inputMaskedTextBox.Text;
+            outputLabel.Text = inputTextbox.Text;
+        }
+
+        private void inputTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Luhn_Calculator
 {
-    partial class Main
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.checkButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.aboutButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
-            this.inputMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.inputTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // checkButton
@@ -80,35 +81,42 @@
             // 
             // outputLabel
             // 
+            this.outputLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLabel.AutoSize = true;
             this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(232, 72);
+            this.outputLabel.Location = new System.Drawing.Point(192, 72);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(0, 25);
+            this.outputLabel.Size = new System.Drawing.Size(76, 25);
             this.outputLabel.TabIndex = 5;
+            this.outputLabel.Text = "Output";
+            this.outputLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // inputMaskedTextBox
+            // inputTextbox
             // 
-            this.inputMaskedTextBox.BeepOnError = true;
-            this.inputMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputMaskedTextBox.Location = new System.Drawing.Point(248, 24);
-            this.inputMaskedTextBox.Mask = "000000000000000";
-            this.inputMaskedTextBox.Name = "inputMaskedTextBox";
-            this.inputMaskedTextBox.Size = new System.Drawing.Size(152, 29);
-            this.inputMaskedTextBox.TabIndex = 6;
+            this.inputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTextbox.Location = new System.Drawing.Point(256, 24);
+            this.inputTextbox.Name = "inputTextbox";
+            this.inputTextbox.Size = new System.Drawing.Size(152, 29);
+            this.inputTextbox.TabIndex = 6;
+            this.inputTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTextbox_KeyPress);
             // 
-            // Main
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(470, 189);
-            this.Controls.Add(this.inputMaskedTextBox);
+            this.Controls.Add(this.inputTextbox);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.checkButton);
-            this.Name = "Main";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Luhn Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,7 +130,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.Label outputLabel;
-        private System.Windows.Forms.MaskedTextBox inputMaskedTextBox;
+        private System.Windows.Forms.TextBox inputTextbox;
     }
 }
 
