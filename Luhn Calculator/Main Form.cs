@@ -33,8 +33,13 @@ namespace Luhn_Calculator
         private void checkButton_Click(object sender, EventArgs e)
         {
             outputLabel.Text = inputTextbox.Text;
+
+            Luhn test;
+            
+            
         }
 
+        // Validates the input to make sure it contain numbers only
         private void inputTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
