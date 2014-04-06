@@ -16,7 +16,23 @@ namespace Luhn_Calculator
         {
             InitializeComponent();
         }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            AboutBox about = new AboutBox();
+            about.Show();
+
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            outputLabel.Text = "";
+            inputMaskedTextBox.Clear();
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            outputLabel.Text = inputMaskedTextBox.Text;
+        }
     }
 }
-
-

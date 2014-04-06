@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Luhn Calculator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This is a simple tool to check the validity of a number using Luhn Algorithm\nhttp://en.wikipedia.org/wiki/Luhn_algorithm")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Luhn Calculator")]
