@@ -34,9 +34,17 @@ namespace Luhn_Calculator
         {
             outputLabel.Text = inputTextbox.Text;
 
-            Luhn test;
             
-            
+
+            try
+            {
+                Luhn x = new Luhn(-1) ;
+                
+            }
+            catch (LuhnException ex)
+            {
+                testLabel.Text = ex.Message;
+            } 
         }
 
         // Validates the input to make sure it contain numbers only

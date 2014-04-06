@@ -8,7 +8,11 @@ namespace Luhn_Calculator
 {
     class Luhn
     {
-        private int checkDigit;
+        public int checkDigit
+        { 
+            get { return this.checkDigit; }
+            set { this.checkDigit = checkDigit; }
+        }
 
         public int Number
         {
@@ -24,12 +28,15 @@ namespace Luhn_Calculator
 
         public Luhn(int Number)
         {
+            if (Number < 0)
+                throw new LuhnException("Number can't be negative!");
+            
             this.Number = Number;
             checkDigit = -1;
-            Valid(Number);
+            isValid(Number);
         }
 
-        public bool Valid(int Number)
+        public bool isValid(int Number)
         {
             //TODO
             return true;
@@ -38,20 +45,39 @@ namespace Luhn_Calculator
         // Return the next possible Check Digit
         public int NextCheckDigit()
         {
+            if (!isValid(Number))
+                throw new LuhnException("Not a valid number. Enter a valid number first to get the next valid number");
+
+            if (Number < 0)
+                throw new LuhnException("Number can't be negative!");
+
+            int next=0;
+
+            
             //TODO
             return 0;
         }
 
         public int NextCheckDigit(int Number)
         {
-            if (!Valid(Number))
-                throw new LuhnException("Not a valid number!");
+            if (!isValid(Number))
+                throw new LuhnException("Not a valid number. Enter a valid number first to get the next valid number");
 
             //TODO
 
             return -1;
         }
 
+
+        private int SumOfDigits(int Number)
+        {
+            int sum = 0;
+            int length = Number.ToString().Length;
+            
+            // TODO calculate sum of digits in Number
+
+            return sum;
+        }
 
 
     }

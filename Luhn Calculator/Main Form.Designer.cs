@@ -35,6 +35,7 @@
             this.aboutButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
             this.inputTextbox = new System.Windows.Forms.TextBox();
+            this.testLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkButton
@@ -102,13 +103,28 @@
             this.inputTextbox.TabIndex = 6;
             this.inputTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTextbox_KeyPress);
             // 
+            // testLabel
+            // 
+            this.testLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.testLabel.AutoSize = true;
+            this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testLabel.Location = new System.Drawing.Point(440, 80);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(54, 25);
+            this.testLabel.TabIndex = 5;
+            this.testLabel.Text = "Test";
+            this.testLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(470, 189);
+            this.ClientSize = new System.Drawing.Size(629, 189);
             this.Controls.Add(this.inputTextbox);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.label1);
@@ -131,6 +147,7 @@
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.TextBox inputTextbox;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 
