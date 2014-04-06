@@ -7,4 +7,4 @@ LuhnCalculator is a simple tool to check if a given number is valid or not using
 License
 =============
 
-This source code is released under the Affero GPL License.
+The source code is released under the Affero GPL License.
