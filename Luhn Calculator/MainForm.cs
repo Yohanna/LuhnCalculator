@@ -73,5 +73,10 @@ namespace Luhn_Calculator
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
