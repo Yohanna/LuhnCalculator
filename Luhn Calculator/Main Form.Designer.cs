@@ -35,12 +35,13 @@
             this.outputLabel = new System.Windows.Forms.Label();
             this.inputTextbox = new System.Windows.Forms.TextBox();
             this.testLabel = new System.Windows.Forms.Label();
+            this.nextButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkButton
             // 
             this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkButton.Location = new System.Drawing.Point(128, 112);
+            this.checkButton.Location = new System.Drawing.Point(39, 112);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(96, 36);
             this.checkButton.TabIndex = 1;
@@ -51,7 +52,7 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(248, 112);
+            this.resetButton.Location = new System.Drawing.Point(328, 112);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(96, 36);
             this.resetButton.TabIndex = 1;
@@ -61,9 +62,10 @@
             // 
             // aboutButton
             // 
-            this.aboutButton.Location = new System.Drawing.Point(200, 160);
+            this.aboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutButton.Location = new System.Drawing.Point(193, 164);
             this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(75, 23);
+            this.aboutButton.Size = new System.Drawing.Size(87, 33);
             this.aboutButton.TabIndex = 3;
             this.aboutButton.Text = "About";
             this.aboutButton.UseVisualStyleBackColor = true;
@@ -76,7 +78,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLabel.AutoSize = true;
             this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(192, 72);
+            this.outputLabel.Location = new System.Drawing.Point(198, 71);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(76, 25);
             this.outputLabel.TabIndex = 5;
@@ -86,10 +88,11 @@
             // inputTextbox
             // 
             this.inputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTextbox.Location = new System.Drawing.Point(160, 24);
+            this.inputTextbox.Location = new System.Drawing.Point(111, 24);
             this.inputTextbox.Name = "inputTextbox";
-            this.inputTextbox.Size = new System.Drawing.Size(152, 29);
+            this.inputTextbox.Size = new System.Drawing.Size(219, 29);
             this.inputTextbox.TabIndex = 6;
+            this.inputTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.inputTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTextbox_KeyPress);
             // 
             // testLabel
@@ -106,12 +109,24 @@
             this.testLabel.Text = "Test";
             this.testLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // nextButton
+            // 
+            this.nextButton.AutoSize = true;
+            this.nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextButton.Location = new System.Drawing.Point(153, 112);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(159, 36);
+            this.nextButton.TabIndex = 7;
+            this.nextButton.Text = "Next Check Digit";
+            this.nextButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(542, 195);
+            this.ClientSize = new System.Drawing.Size(542, 209);
+            this.Controls.Add(this.nextButton);
             this.Controls.Add(this.inputTextbox);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.outputLabel);
@@ -135,6 +150,7 @@
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.TextBox inputTextbox;
         private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.Button nextButton;
     }
 }
 

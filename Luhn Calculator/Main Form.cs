@@ -12,6 +12,8 @@ namespace Luhn_Calculator
 {
     public partial class MainForm : Form
     {
+        Luhn luhn;
+
         public MainForm()
         {
             InitializeComponent();
@@ -32,18 +34,38 @@ namespace Luhn_Calculator
 
         private void checkButton_Click(object sender, EventArgs e)
         {
+            if (inputTextbox.Text == "")
+                return;     // TODO display an error message
+
+            bool valid = true;
+
+            long x;
+
+            Int64.TryParse(inputTextbox.Text, out x);
+
+            if (x == 0)
+                return; // TODO display error message
+
             try
             {
-                int x = Convert.ToInt32(inputTextbox.Text) ;
-                Luhn luhn = new Luhn(x);
-
-                testLabel.Text = luhn.DigitSum(x).ToString();
-            
+                luhn = new Luhn(x);
+                valid = luhn.isValid();
             }
             catch (LuhnException ex)
             {
                 testLabel.Text = ex.Message;
             } 
+
+            if(valid)
+            {
+                outputLabel.ForeColor = System.Drawing.Color.Green;
+                outputLabel.Text = "Valid";
+            }
+            else
+            {
+                outputLabel.ForeColor = System.Drawing.Color.Red;
+                outputLabel.Text = "Invalid";
+            }
         }
 
         // Validates the input to make sure it contain numbers only
