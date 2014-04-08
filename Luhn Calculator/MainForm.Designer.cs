@@ -36,12 +36,13 @@
             this.inputTextbox = new System.Windows.Forms.TextBox();
             this.testLabel = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
+            this.checkDigitLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkButton
             // 
             this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkButton.Location = new System.Drawing.Point(39, 112);
+            this.checkButton.Location = new System.Drawing.Point(39, 110);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(96, 36);
             this.checkButton.TabIndex = 1;
@@ -52,7 +53,7 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(328, 112);
+            this.resetButton.Location = new System.Drawing.Point(328, 110);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(96, 36);
             this.resetButton.TabIndex = 1;
@@ -63,7 +64,7 @@
             // aboutButton
             // 
             this.aboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutButton.Location = new System.Drawing.Point(193, 164);
+            this.aboutButton.Location = new System.Drawing.Point(193, 162);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(87, 33);
             this.aboutButton.TabIndex = 3;
@@ -78,7 +79,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLabel.AutoSize = true;
             this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(198, 71);
+            this.outputLabel.Location = new System.Drawing.Point(198, 69);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(76, 25);
             this.outputLabel.TabIndex = 5;
@@ -88,7 +89,7 @@
             // inputTextbox
             // 
             this.inputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTextbox.Location = new System.Drawing.Point(111, 24);
+            this.inputTextbox.Location = new System.Drawing.Point(120, 22);
             this.inputTextbox.Name = "inputTextbox";
             this.inputTextbox.Size = new System.Drawing.Size(219, 29);
             this.inputTextbox.TabIndex = 6;
@@ -102,7 +103,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.testLabel.AutoSize = true;
             this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testLabel.Location = new System.Drawing.Point(440, 80);
+            this.testLabel.Location = new System.Drawing.Point(440, 78);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(54, 25);
             this.testLabel.TabIndex = 5;
@@ -113,7 +114,7 @@
             // 
             this.nextButton.AutoSize = true;
             this.nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(153, 112);
+            this.nextButton.Location = new System.Drawing.Point(153, 110);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(159, 36);
             this.nextButton.TabIndex = 7;
@@ -121,12 +122,25 @@
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
+            // checkDigitLabel
+            // 
+            this.checkDigitLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkDigitLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.checkDigitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDigitLabel.Location = new System.Drawing.Point(358, 22);
+            this.checkDigitLabel.Name = "checkDigitLabel";
+            this.checkDigitLabel.Size = new System.Drawing.Size(43, 29);
+            this.checkDigitLabel.TabIndex = 8;
+            this.checkDigitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkDigitLabel.UseMnemonic = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(542, 209);
+            this.ClientSize = new System.Drawing.Size(542, 210);
+            this.Controls.Add(this.checkDigitLabel);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.inputTextbox);
             this.Controls.Add(this.testLabel);
@@ -152,6 +166,7 @@
         private System.Windows.Forms.TextBox inputTextbox;
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Label checkDigitLabel;
     }
 }
 

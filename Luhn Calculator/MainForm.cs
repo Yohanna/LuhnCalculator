@@ -41,15 +41,13 @@ namespace Luhn_Calculator
 
             long x;
 
-            Int64.TryParse(inputTextbox.Text, out x);
-
-            if (x == 0)
-                return; // TODO display error message
-
+            if (!(Int64.TryParse(inputTextbox.Text, out x)))
+                outputLabel.Text = "Enter a smaller number"; 
+            
             try
             {
                 luhn = new Luhn(x);
-                valid = luhn.isValid();
+                valid = luhn.IsValid();
             }
             catch (LuhnException ex)
             {
@@ -66,6 +64,8 @@ namespace Luhn_Calculator
                 outputLabel.ForeColor = System.Drawing.Color.Red;
                 outputLabel.Text = "Invalid";
             }
+
+            checkDigitLabel.Text = "";
         }
 
         // Validates the input to make sure it contain numbers only
@@ -74,9 +74,10 @@ namespace Luhn_Calculator
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
+        //TODO fix -> Check button mush be clicked first so the number get stored in Luhn object
         private void nextButton_Click(object sender, EventArgs e)
         {
-
+            checkDigitLabel.Text = luhn.NextCheckDigit().ToString();
         }
     }
 }
