@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Luhn_Calculator
-{ 
+{
     class Luhn
     {
         public int checkDigit { get; private set; }
