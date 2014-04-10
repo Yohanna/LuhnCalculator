@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.checkButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.testLabel = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
             this.checkDigitLabel = new System.Windows.Forms.Label();
+            this.clipboardButton = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // checkButton
@@ -134,12 +137,23 @@
             this.checkDigitLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkDigitLabel.UseMnemonic = false;
             // 
+            // clipboardButton
+            // 
+            this.clipboardButton.Image = global::Luhn_Calculator.Properties.Resources.Clipboard;
+            this.clipboardButton.Location = new System.Drawing.Point(436, 22);
+            this.clipboardButton.Name = "clipboardButton";
+            this.clipboardButton.Size = new System.Drawing.Size(37, 29);
+            this.clipboardButton.TabIndex = 9;
+            this.toolTip.SetToolTip(this.clipboardButton, "Copy the current number to the clipboard");
+            this.clipboardButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(542, 210);
+            this.Controls.Add(this.clipboardButton);
             this.Controls.Add(this.checkDigitLabel);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.inputTextbox);
@@ -167,6 +181,8 @@
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label checkDigitLabel;
+        private System.Windows.Forms.Button clipboardButton;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 
