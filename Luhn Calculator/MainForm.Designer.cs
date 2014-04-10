@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.checkButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.aboutButton = new System.Windows.Forms.Button();
             this.outputLabel = new System.Windows.Forms.Label();
@@ -40,23 +39,14 @@
             this.checkDigitLabel = new System.Windows.Forms.Label();
             this.clipboardButton = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // checkButton
-            // 
-            this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkButton.Location = new System.Drawing.Point(39, 110);
-            this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(96, 36);
-            this.checkButton.TabIndex = 1;
-            this.checkButton.Text = "Check";
-            this.checkButton.UseVisualStyleBackColor = true;
-            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(328, 110);
+            this.resetButton.Location = new System.Drawing.Point(284, 187);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(96, 36);
             this.resetButton.TabIndex = 1;
@@ -67,7 +57,7 @@
             // aboutButton
             // 
             this.aboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutButton.Location = new System.Drawing.Point(193, 162);
+            this.aboutButton.Location = new System.Drawing.Point(443, 238);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(87, 33);
             this.aboutButton.TabIndex = 3;
@@ -82,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLabel.AutoSize = true;
             this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(198, 69);
+            this.outputLabel.Location = new System.Drawing.Point(235, 128);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(76, 25);
             this.outputLabel.TabIndex = 5;
@@ -92,11 +82,13 @@
             // inputTextbox
             // 
             this.inputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTextbox.Location = new System.Drawing.Point(120, 22);
+            this.inputTextbox.Location = new System.Drawing.Point(170, 30);
+            this.inputTextbox.Multiline = true;
             this.inputTextbox.Name = "inputTextbox";
-            this.inputTextbox.Size = new System.Drawing.Size(219, 29);
+            this.inputTextbox.Size = new System.Drawing.Size(219, 20);
             this.inputTextbox.TabIndex = 6;
             this.inputTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inputTextbox.TextChanged += new System.EventHandler(this.inputTextbox_TextChanged);
             this.inputTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTextbox_KeyPress);
             // 
             // testLabel
@@ -106,7 +98,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.testLabel.AutoSize = true;
             this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testLabel.Location = new System.Drawing.Point(440, 78);
+            this.testLabel.Location = new System.Drawing.Point(457, 119);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(54, 25);
             this.testLabel.TabIndex = 5;
@@ -117,11 +109,11 @@
             // 
             this.nextButton.AutoSize = true;
             this.nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(153, 110);
+            this.nextButton.Location = new System.Drawing.Point(66, 187);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(159, 36);
             this.nextButton.TabIndex = 7;
-            this.nextButton.Text = "Next Check Digit";
+            this.nextButton.Text = "Next Valid Digit";
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
@@ -130,7 +122,7 @@
             this.checkDigitLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.checkDigitLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.checkDigitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDigitLabel.Location = new System.Drawing.Point(358, 22);
+            this.checkDigitLabel.Location = new System.Drawing.Point(170, 84);
             this.checkDigitLabel.Name = "checkDigitLabel";
             this.checkDigitLabel.Size = new System.Drawing.Size(43, 29);
             this.checkDigitLabel.TabIndex = 8;
@@ -140,19 +132,42 @@
             // clipboardButton
             // 
             this.clipboardButton.Image = global::Luhn_Calculator.Properties.Resources.Clipboard;
-            this.clipboardButton.Location = new System.Drawing.Point(436, 22);
+            this.clipboardButton.Location = new System.Drawing.Point(410, 30);
             this.clipboardButton.Name = "clipboardButton";
             this.clipboardButton.Size = new System.Drawing.Size(37, 29);
             this.clipboardButton.TabIndex = 9;
             this.toolTip.SetToolTip(this.clipboardButton, "Copy the current number to the clipboard");
             this.clipboardButton.UseVisualStyleBackColor = true;
+            this.clipboardButton.Click += new System.EventHandler(this.clipboardButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 24);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Number:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 24);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Next check digit:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(542, 210);
+            this.ClientSize = new System.Drawing.Size(542, 283);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.clipboardButton);
             this.Controls.Add(this.checkDigitLabel);
             this.Controls.Add(this.nextButton);
@@ -161,7 +176,6 @@
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.checkButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -173,7 +187,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button checkButton;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button aboutButton;
         private System.Windows.Forms.Label outputLabel;
@@ -183,6 +196,8 @@
         private System.Windows.Forms.Label checkDigitLabel;
         private System.Windows.Forms.Button clipboardButton;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

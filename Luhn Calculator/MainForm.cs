@@ -30,41 +30,6 @@ namespace Luhn_Calculator
         {
             outputLabel.Text = "";
             inputTextbox.Clear();
-        }
-
-        private void checkButton_Click(object sender, EventArgs e)
-        {
-            if (inputTextbox.Text == "")
-                return;     // TODO display an error message
-
-            bool valid = true;
-
-            long x;
-
-            if (!(Int64.TryParse(inputTextbox.Text, out x)))
-                outputLabel.Text = "Enter a smaller number"; 
-            
-            try
-            {
-                luhn = new Luhn(x);
-                valid = luhn.IsValid();
-            }
-            catch (LuhnException ex)
-            {
-                testLabel.Text = ex.Message;
-            } 
-
-            if(valid)
-            {
-                outputLabel.ForeColor = System.Drawing.Color.Green;
-                outputLabel.Text = "Valid";
-            }
-            else
-            {
-                outputLabel.ForeColor = System.Drawing.Color.Red;
-                outputLabel.Text = "Invalid";
-            }
-
             checkDigitLabel.Text = "";
         }
 
@@ -77,7 +42,44 @@ namespace Luhn_Calculator
         //TODO fix -> Check button mush be clicked first so the number get stored in Luhn object
         private void nextButton_Click(object sender, EventArgs e)
         {
+        }
+
+        private void inputTextbox_TextChanged(object sender, EventArgs e)
+        {
+            bool valid = true;
+
+            long x;
+
+            if (!(Int64.TryParse(inputTextbox.Text, out x)))
+                outputLabel.Text = "Enter a smaller number";
+
+            try
+            {
+                luhn = new Luhn(x);
+                valid = luhn.IsValid();
+            }
+            catch (LuhnException ex)
+            {
+                testLabel.Text = ex.Message;
+            }
+
+            if (valid)
+            {
+                outputLabel.ForeColor = System.Drawing.Color.Green;
+                outputLabel.Text = "Valid";
+            }
+            else
+            {
+                outputLabel.ForeColor = System.Drawing.Color.Red;
+                outputLabel.Text = "Invalid";
+            }
+
             checkDigitLabel.Text = luhn.NextCheckDigit().ToString();
+        }
+
+        private void clipboardButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(inputTextbox.Text);
         }
     }
 }
