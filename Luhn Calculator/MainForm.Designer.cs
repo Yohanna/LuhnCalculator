@@ -46,7 +46,7 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(284, 187);
+            this.resetButton.Location = new System.Drawing.Point(240, 187);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(96, 36);
             this.resetButton.TabIndex = 1;
@@ -57,7 +57,7 @@
             // aboutButton
             // 
             this.aboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutButton.Location = new System.Drawing.Point(443, 238);
+            this.aboutButton.Location = new System.Drawing.Point(360, 225);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(87, 33);
             this.aboutButton.TabIndex = 3;
@@ -71,21 +71,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.Location = new System.Drawing.Point(235, 128);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(76, 25);
+            this.outputLabel.Size = new System.Drawing.Size(0, 29);
             this.outputLabel.TabIndex = 5;
-            this.outputLabel.Text = "Output";
             this.outputLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // inputTextbox
             // 
             this.inputTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputTextbox.Location = new System.Drawing.Point(170, 30);
-            this.inputTextbox.Multiline = true;
             this.inputTextbox.Name = "inputTextbox";
-            this.inputTextbox.Size = new System.Drawing.Size(219, 20);
+            this.inputTextbox.Size = new System.Drawing.Size(219, 29);
             this.inputTextbox.TabIndex = 6;
             this.inputTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.inputTextbox.TextChanged += new System.EventHandler(this.inputTextbox_TextChanged);
@@ -98,7 +96,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.testLabel.AutoSize = true;
             this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testLabel.Location = new System.Drawing.Point(457, 119);
+            this.testLabel.Location = new System.Drawing.Point(405, 89);
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(54, 25);
             this.testLabel.TabIndex = 5;
@@ -109,7 +107,7 @@
             // 
             this.nextButton.AutoSize = true;
             this.nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(66, 187);
+            this.nextButton.Location = new System.Drawing.Point(37, 187);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(159, 36);
             this.nextButton.TabIndex = 7;
@@ -165,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(542, 283);
+            this.ClientSize = new System.Drawing.Size(539, 267);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clipboardButton);

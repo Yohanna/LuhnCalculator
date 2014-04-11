@@ -42,6 +42,17 @@ namespace Luhn_Calculator
         //TODO fix -> Check button mush be clicked first so the number get stored in Luhn object
         private void nextButton_Click(object sender, EventArgs e)
         {
+            if (inputTextbox.Text == "")
+            {
+                MessageBox.Show("Enter a number first!");
+                return;
+            }
+
+            string str = luhn.Number.ToString() + luhn.NextCheckDigit().ToString();
+
+            luhn = new Luhn(Int64.Parse(str));
+
+            inputTextbox.Text = luhn.Number.ToString();
         }
 
         private void inputTextbox_TextChanged(object sender, EventArgs e)
@@ -50,8 +61,7 @@ namespace Luhn_Calculator
 
             long x;
 
-            if (!(Int64.TryParse(inputTextbox.Text, out x)))
-                outputLabel.Text = "Enter a smaller number";
+            long.TryParse(inputTextbox.Text, out x);
 
             try
             {
