@@ -12,7 +12,7 @@ namespace Luhn_Calculator
 {
     public partial class MainForm : Form
     {
-        Luhn luhn;
+        private Luhn luhn;
 
         public MainForm()
         {
@@ -29,48 +29,51 @@ namespace Luhn_Calculator
         private void resetButton_Click(object sender, EventArgs e)
         {
             outputLabel.Text = "";
-            inputTextbox.Clear();
+            inputRichTextBox.Clear();
             checkDigitLabel.Text = "";
+
+            MessageBox.Show("test");
         }
 
         // Validates the input to make sure it contain numbers only
-        private void inputTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        private void inputRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        //TODO fix -> Check button mush be clicked first so the number get stored in Luhn object
         private void nextButton_Click(object sender, EventArgs e)
         {
-            if (inputTextbox.Text == "")
+            if (inputRichTextBox.Text == "")
             {
                 MessageBox.Show("Enter a number first!");
                 return;
             }
 
-            string str = luhn.Number.ToString() + luhn.NextCheckDigit().ToString();
+            luhn = new Luhn(luhn.Number.ToString() + luhn.NextCheckDigit().ToString());
 
-            luhn = new Luhn(Int64.Parse(str));
-
-            inputTextbox.Text = luhn.Number.ToString();
+            inputRichTextBox.Text = luhn.Number.ToString();
         }
 
-        private void inputTextbox_TextChanged(object sender, EventArgs e)
+        private void clipboardButton_Click(object sender, EventArgs e)
         {
+            Clipboard.SetText(inputRichTextBox.Text);
+        }
+
+        private void inputRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (inputRichTextBox.Text == "")
+                return;
+
             bool valid = true;
-
-            long x;
-
-            long.TryParse(inputTextbox.Text, out x);
 
             try
             {
-                luhn = new Luhn(x);
+                luhn = new Luhn(inputRichTextBox.Text);
                 valid = luhn.IsValid();
-            }
-            catch (LuhnException ex)
+            } catch (LuhnException ex)
             {
-                testLabel.Text = ex.Message;
+                MessageBox.Show(ex.Message);
+                resetButton_Click(this, e);
             }
 
             if (valid)
@@ -85,11 +88,6 @@ namespace Luhn_Calculator
             }
 
             checkDigitLabel.Text = luhn.NextCheckDigit().ToString();
-        }
-
-        private void clipboardButton_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(inputTextbox.Text);
         }
     }
 }
