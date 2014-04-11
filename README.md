@@ -5,7 +5,7 @@ LuhnCalculator is a simple tool to check if a given number is valid or not using
 
 Compiling
 ==============
-Remember to add System.Numerics namespace to your project by selecting Project menu => Add Reference => Search for System.Numerics in the search box => check the check box beside the name => Ok
+Remember to add System.Numerics assembly reference to your project by selecting Project menu => Add Reference => Search for System.Numerics in the search box => check the check box beside the name => Ok
  
 License
 =============
