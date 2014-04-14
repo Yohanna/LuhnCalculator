@@ -13,24 +13,18 @@ namespace Luhn_Calculator
         public BigInteger Number; 
 
         #region Constructors
-        public Luhn()
-        {
-            Number = new BigInteger(0);
-            checkDigit = 0;
-        }
-
         public Luhn(string newNumber)
         {
-            if (BigInteger.TryParse(newNumber, out Number) == false && newNumber != "")
-                throw new LuhnException("\"" + newNumber + "\"" + " is not a valid number!");
-            
-            checkDigit = 0;
-        }
+            if (newNumber == "")
+                throw new LuhnException("Please enter a number first!");
 
-        public Luhn(long newNumber)
-        {
-            this.Number = new BigInteger(newNumber);
-            checkDigit = 0;
+            if (BigInteger.TryParse(newNumber, out Number) == false) 
+            throw new LuhnException("\"" + newNumber + "\"" + " is not a valid number!");
+
+            if (Number.Sign == -1)
+                throw new LuhnException("Enter a positive number!");
+            
+            //checkDigit = 0;
         }
         #endregion
 
@@ -40,9 +34,9 @@ namespace Luhn_Calculator
         /// </summary>
         public bool IsValid()
         {
-            BigInteger num =  Number;
+            // Use another variable since its value will be lost in the while loop
+            BigInteger num =  Number; 
             int len = num.ToString().Length;
-
 
             List<int> numberList = new List<int>();
 
@@ -83,6 +77,9 @@ namespace Luhn_Calculator
         /// </summary> 
         public int NextCheckDigit()
         {
+            if (Number.IsZero)
+                return 0;
+
             BigInteger num = Number;
 
             int len = num.ToString().Length;
@@ -115,6 +112,5 @@ namespace Luhn_Calculator
     class LuhnException : Exception
     {
         public LuhnException(string message) : base(message) { }
-
     }
 }

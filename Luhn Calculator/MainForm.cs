@@ -43,15 +43,21 @@ namespace Luhn_Calculator
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            if (inputRichTextBox.Text == "")
+            //if (inputRichTextBox.Text == "")
+            //{
+            //    MessageBox.Show("Enter a number first!");
+            //    return;
+            //}
+
+            try
             {
-                MessageBox.Show("Enter a number first!");
-                return;
-            }
+                luhn = new Luhn(luhn.Number.ToString() + luhn.NextCheckDigit().ToString());
 
-            luhn = new Luhn(luhn.Number.ToString() + luhn.NextCheckDigit().ToString());
+                inputRichTextBox.Text = luhn.Number.ToString();
+            } catch (LuhnException ex)
+            { MessageBox.Show(ex.Message); }
 
-            inputRichTextBox.Text = luhn.Number.ToString();
+
         }
 
         private void clipboardButton_Click(object sender, EventArgs e)
