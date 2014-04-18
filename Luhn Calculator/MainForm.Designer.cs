@@ -45,9 +45,9 @@
             // resetButton
             // 
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(239, 202);
+            this.resetButton.Location = new System.Drawing.Point(19, 202);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(96, 36);
+            this.resetButton.Size = new System.Drawing.Size(96, 35);
             this.resetButton.TabIndex = 1;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // aboutButton
             // 
             this.aboutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutButton.Location = new System.Drawing.Point(378, 202);
+            this.aboutButton.Location = new System.Drawing.Point(412, 203);
             this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(99, 36);
+            this.aboutButton.Size = new System.Drawing.Size(99, 35);
             this.aboutButton.TabIndex = 3;
             this.aboutButton.Text = "About";
             this.aboutButton.UseVisualStyleBackColor = true;
@@ -70,10 +70,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(234, 170);
+            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Location = new System.Drawing.Point(296, 126);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(0, 29);
+            this.outputLabel.Size = new System.Drawing.Size(0, 37);
             this.outputLabel.TabIndex = 5;
             this.outputLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -81,7 +81,7 @@
             // 
             this.nextButton.AutoSize = true;
             this.nextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(28, 202);
+            this.nextButton.Location = new System.Drawing.Point(189, 201);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(159, 36);
             this.nextButton.TabIndex = 7;
@@ -106,11 +106,17 @@
             this.clipboardButton.Image = global::Luhn_Calculator.Properties.Resources.Clipboard;
             this.clipboardButton.Location = new System.Drawing.Point(461, 30);
             this.clipboardButton.Name = "clipboardButton";
-            this.clipboardButton.Size = new System.Drawing.Size(37, 29);
+            this.clipboardButton.Size = new System.Drawing.Size(38, 36);
             this.clipboardButton.TabIndex = 9;
             this.toolTip.SetToolTip(this.clipboardButton, "Copy the current number to the clipboard");
             this.clipboardButton.UseVisualStyleBackColor = true;
             this.clipboardButton.Click += new System.EventHandler(this.clipboardButton_Click);
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutoPopDelay = 5000;
+            this.toolTip.InitialDelay = 250;
+            this.toolTip.ReshowDelay = 100;
             // 
             // label1
             // 

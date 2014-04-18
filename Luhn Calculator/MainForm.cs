@@ -28,11 +28,12 @@ namespace Luhn_Calculator
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            if (luhn != null) // Call Reset() only if luhn is initialized
+                luhn = null;
+
             outputLabel.Text = "";
             inputRichTextBox.Clear();
             checkDigitLabel.Text = "";
-
-            MessageBox.Show("test");
         }
 
         // Validates the input to make sure it contain numbers only
@@ -43,18 +44,16 @@ namespace Luhn_Calculator
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            //if (inputRichTextBox.Text == "")
-            //{
-            //    MessageBox.Show("Enter a number first!");
-            //    return;
-            //}
+            if (luhn == null) // luhn is used uninitialized
+                return;
 
             try
             {
                 luhn = new Luhn(luhn.Number.ToString() + luhn.NextCheckDigit().ToString());
 
                 inputRichTextBox.Text = luhn.Number.ToString();
-            } catch (LuhnException ex)
+            }
+            catch (LuhnException ex)
             { MessageBox.Show(ex.Message); }
 
 
@@ -62,7 +61,8 @@ namespace Luhn_Calculator
 
         private void clipboardButton_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(inputRichTextBox.Text);
+            if (inputRichTextBox.Text != "")
+                Clipboard.SetText(inputRichTextBox.Text);
         }
 
         private void inputRichTextBox_TextChanged(object sender, EventArgs e)
@@ -76,7 +76,8 @@ namespace Luhn_Calculator
             {
                 luhn = new Luhn(inputRichTextBox.Text);
                 valid = luhn.IsValid();
-            } catch (LuhnException ex)
+            }
+            catch (LuhnException ex)
             {
                 MessageBox.Show(ex.Message);
                 resetButton_Click(this, e);

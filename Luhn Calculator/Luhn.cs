@@ -15,9 +15,6 @@ namespace Luhn_Calculator
         #region Constructors
         public Luhn(string newNumber)
         {
-            if (newNumber == "")
-                throw new LuhnException("Please enter a number first!");
-
             if (BigInteger.TryParse(newNumber, out Number) == false) 
             throw new LuhnException("\"" + newNumber + "\"" + " is not a valid number!");
 
