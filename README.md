@@ -11,7 +11,7 @@ Remember to add `System.Numerics` assembly reference to your project by
 - `Add Reference`
 - Search for `System.Numerics` in the search box
 - check the check box beside the name
-- Click `Ok`
+- Click `OK`
  
 License
 =============
